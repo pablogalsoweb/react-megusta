@@ -1,0 +1,30 @@
+
+.skeleton{
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skeleton .image{
+    width: 100%;
+    height: 250px;
+    background-color: #afabab;
+    animation: colorChange 2s infinite;
+}
+
+.skeleton .boton{
+    width: 130px;
+    height: 30px;
+    border-radius: 8px ;
+    background-color: #afabab;
+    margin-top: 10px;
+}
+
+@keyframes colorChange {
+    0%, 50%, 100% {
+        background-color: #c7c3c3; /* Color inicial */
+    }
+    25%, 75% {
+        background-color: #8c8b8b; /* Nuevo color a la mitad de la animación */
+    }
+}
