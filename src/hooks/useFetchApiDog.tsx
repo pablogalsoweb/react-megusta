@@ -1,16 +1,11 @@
 import {useEffect, useState} from "react";
+import {MisTipoLista} from "../interfaces/interface"
  
 const APIKEY_DOG = 'live_HvfCJDP9TObmycyHDmxjwVev6xhoCGVP48LQ8o4fLWXA07t23yUujvnx3cfbesLE';
+ 
 
-export function useFetchApiDog(limit: number, page: number) : unknown[] {
-
-     interface MisTipoLista {
-        id: number;
-        url: string;
-        ancho: number;
-        alto: number;
-    }
-
+export function useFetchApiDog(limit: number, page: number) : [MisTipoLista[], boolean, boolean | null] {
+ 
     const [items, setItems] = useState<MisTipoLista[]>([]);
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);

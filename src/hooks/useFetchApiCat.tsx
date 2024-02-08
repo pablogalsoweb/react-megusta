@@ -1,15 +1,11 @@
 import {useEffect, useState} from "react";
+import {MisTipoLista} from "../interfaces/interface"
 
 const APIKEY_CAT = 'live_tLOKv64lQt6H09zEximDtsxRtqPbZuk5Leqzwg33PjyMXFM12Vs9suffRSfErwsX'; 
+ 
 
-export function useFetchApiCat(limit: number, page: number) : unknown[] {
+export function useFetchApiCat(limit: number, page: number) : [MisTipoLista[], boolean, boolean | null] {
 
-     interface MisTipoLista {
-        id: number;
-        url: string;
-        ancho: number;
-        alto: number;
-    }
 
     const [items, setItems] = useState<MisTipoLista[]>([]);
     const [cargando, setCargando] = useState(true);

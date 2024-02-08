@@ -6,12 +6,14 @@ import {useFetchApiCat} from "../hooks/useFetchApiCat";
 import { Loading } from './loading';
 import {useState} from "react";
 
-const LIMIT_ITEMS = 2;
+import {MisTipoLista} from "../interfaces/interface"
 
+const LIMIT_ITEMS = 2;
+ 
 export function ItemsListaCat(){
 
     const [page, setPage] = useState(0);
-    const [items, cargando, error] = useFetchApiCat(LIMIT_ITEMS, page);
+    const [items, cargando, error]: [MisTipoLista[], boolean,  boolean | null] = useFetchApiCat(LIMIT_ITEMS, page);
 
     const getMoreData = () => {
         setPage(page+1);

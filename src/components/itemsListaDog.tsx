@@ -6,12 +6,15 @@ import {useFetchApiDog} from "../hooks/useFetchApiDog";
 import { Loading } from './loading';
 import {useState} from "react";
 
+import {MisTipoLista} from "../interfaces/interface"
+
 const LIMIT_ITEMS = 2;
+ 
 
 export function ItemsListaDog(){
 
     const [page, setPage] = useState(0);
-    const [items, cargando, error] = useFetchApiDog(LIMIT_ITEMS, page);
+    const [items, cargando, error]: [MisTipoLista[], boolean,  boolean | null] = useFetchApiDog(LIMIT_ITEMS, page);
 
     const getMoreData = () => {
         setPage(page+1);
